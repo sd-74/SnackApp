@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify
+from flask import Blueprint, jsonify, request
 from .ai_model import recommend_snacks
 
 main = Blueprint('main', __name__)
@@ -9,6 +9,9 @@ def index():
 
 @main.route('/recommend', methods=['POST'])
 def recommend():
-    user_preferences = {"likes sweet": True, "likes_salty": False}
-    recommendations = recommend_snacks(user_preferences)
-    return jsonify(recommendations)
+    try:
+        user_preferences = request.json
+        recommendations = recommend_snacks(user_preferences)
+        return jsonify(recommendations)
+    except Exception as e:
+        return jsonify({"error": str(e)})
