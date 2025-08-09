@@ -7,6 +7,32 @@ snacks = [
     {"name": "Granola Bar", "sweet": True, "salty": False}
 ]
 
+# snacks = [
+#     {
+#         "id": 1,
+#         "name": "Chocolate Bar",
+#         "tags": ["sweet", "chocolate", "creamy"],
+#         "attributes": {
+#             "sweet": 0.9,
+#             "salty": 0.1,
+#             "chocolate": 1.0,
+#             "creamy": 0.8
+#         }
+#     },
+#     {
+#         "id": 2,
+#         "name": "Flamin' Hot Cheetos",
+#         "tags": ["salty", "spicy", "crunchy"],
+#         "attributes": {
+#             "sweet": 0.0,
+#             "salty": 0.9,
+#             "spicy": 0.8,
+#             "crunchy": 1.0
+#         }
+#     }
+# ]
+
+
 def recommend_snacks(user_preferences):
     likes_sweet = user_preferences.get("likes_sweet", True)
     likes_salty = user_preferences.get("likes_salty", False)
