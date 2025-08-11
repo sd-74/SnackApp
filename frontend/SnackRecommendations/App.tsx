@@ -7,6 +7,7 @@ import DatabaseTest from './components/DatabaseTest'
 import { View, Button, Text, StyleSheet } from 'react-native'
 import { Session } from '@supabase/supabase-js'
 
+
 export default function App() {
   const [session, setSession] = useState<Session | null>(null)
   const [currentView, setCurrentView] = useState<'account' | 'database'>('account')
